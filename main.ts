@@ -67,7 +67,7 @@ await runBars({
       const bounceBps = ((close - low10) * 10000n) / low10;
 
       if (dropBps >= 100n && bounceBps >= 10n) {
-        const cashToUse = (state.cash * 95n) / 100n;
+        const cashToUse = (state.cash * 100n) / 100n;
         const minNotional = BigInt(state.hello.fees.min_notional_quote_units ?? 1_000_000n);
         if (cashToUse >= minNotional && state.weightRoom('CBBTC') >= minNotional) {
           return [{ side: 'buy', symbol: 'CBBTC', notional_quote_units: cashToUse, max_slippage_bps: 200 }];
