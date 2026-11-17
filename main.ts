@@ -49,7 +49,7 @@ await runBars({
     }
 
     // ENTRY
-    if (!hasPosition && closes.length >= 120 && (state.seq - lastExitBarSeq) >= 60) {
+    if (!hasPosition && closes.length >= 120 && (state.seq - lastExitBarSeq) >= 30) {
       const slice120 = closes.slice(-120);
       let high = slice120[0]!;
       for (const p of slice120) {
